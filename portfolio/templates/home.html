@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+<header class="row bg-white">
+    <div class="col-md-4">
+<img src="{% static 'logo.png'%}" alt="" width="150" height="150">
+    </div> 
+    <div class="col-md-8 my-auto">
+    <h1>soy <strong>Danny ZM</strong></h1>
+    <h3> Soy estudiantes de la ULEAM </h3>
+        <p></p>
+    <a href="{% static 'momazo.pdf'%}"class="btn btn-primary btn-lg rounded-0 my-3">Descarga este momazo papuh :v</a>
+
+    <div class="col-md-8">
+    <text-align"left"><img src="{% static 'equipo.jpg'%}" alt="" width="500" height="500">
+    </div>
+</div>
+
+</header>
+
+<div class="row my-4 text-center">
+<h3>My Projects</h3>
+<p>mis pequeños proyectos.</p>
+
+    {% for project in projects %}
+
+<div class="col-md-3 p-3" >
+    <div class="card bg-white card-project">
+        <div class="card-body">
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+                <img src="{{project.image.url}}" alt="{{project.title}}"class="card-img-top" >
+
+                {% if project.url %}
+                <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+
+{%endfor %}
+{% endblock %}
+</div>
