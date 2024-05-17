@@ -3,7 +3,7 @@ set -o errexit
 pip install -r requiriments.txt
 
 python manage.py collectstatic --no-input
-python manage.py makemigrations --no--input
+python manage.py makemigrations --no-input
 python manage.py migrate 
 
 if [[ $CREATE_SUPERUSER ]];
